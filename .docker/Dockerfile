@@ -1,6 +1,7 @@
 FROM nvidia/cuda:11.2.2-devel-ubuntu20.04
 
-RUN apt-get update -y && apt-get install build-essential vim \
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update -y && apt-get install -y build-essential vim \
     wget curl git zip gcc make openssl \
     libssl-dev libbz2-dev libreadline-dev \
     libsqlite3-dev python3-tk tk-dev python-tk \
