@@ -4,7 +4,7 @@ RUN apt-get update -y && apt-get install build-essential vim \
     wget curl git zip gcc make openssl \
     libssl-dev libbz2-dev libreadline-dev \
     libsqlite3-dev python3-tk tk-dev python-tk \
-    libfreetype6-dev libffi-dev liblzma-dev ninja-build/xenial -y
+    libfreetype6-dev libffi-dev liblzma-dev -y
 RUN git clone https://github.com/yyuu/pyenv.git /root/.pyenv
 ENV HOME  /root
 ENV PYENV_ROOT $HOME/.pyenv
