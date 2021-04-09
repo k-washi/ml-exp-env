@@ -245,7 +245,6 @@ promise==2.3
 prompt-toolkit==1.0.18
 protobuf==3.12.4
 psutil==5.4.8
-psycopg2==2.7.6.1
 ptyprocess==0.7.0
 py==1.10.0
 pyarrow==3.0.0
