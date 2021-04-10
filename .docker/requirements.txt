@@ -1,4 +1,5 @@
 hydra-core==1.0.4
+ConfigArgParse==1.4
 albumentations==0.1.12
 gym==0.17.3
 h5py==2.10.0
@@ -24,8 +25,4 @@ tensorflow==2.4.1
 tensorflow-hub==0.11.0
 tensorflow-metadata==0.29.0
 tensorflow-probability==0.12.1
-torch==1.8.1
-torchsummary==1.5.1
-torchtext==0.9.1
-torchvision==0.9.1
 tqdm==4.41.1

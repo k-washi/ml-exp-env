@@ -18,7 +18,8 @@ RUN pyenv rehash
 RUN pip install --upgrade pip
 COPY requirements.txt .
 RUN pip install -r requirements.txt
-RUN pip install jupyterlab japanize-matplotlib boto3
+RUN pip install torch==1.7.0+cu110 torchvision==0.8.1+cu110 torchaudio===0.7.0 -f https://download.pytorch.org/whl/torch_stable.html
+RUN pip install torchsummary jupyterlab japanize-matplotlib boto3
 
 # JupyterNotebookのパスワード
 RUN mkdir $HOME/.jupyter
