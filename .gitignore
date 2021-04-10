@@ -129,5 +129,8 @@ dmypy.json
 .pyre/
 /data/*
 /ceres-solver
-/Neural-Scene-Flow-Fields
+
 /.vscode
+
+/Neural-Scene-Flow-Fields
+/JEG-Quest
