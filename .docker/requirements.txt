@@ -1,6 +1,7 @@
 hydra-core==1.0.4
 ConfigArgParse==1.4
 albumentations==0.1.12
+cupy-cuda111==8.6.0
 gym==0.17.3
 h5py==2.10.0
 jupyter==1.0.0
