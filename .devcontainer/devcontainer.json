@@ -1,5 +1,11 @@
 {
     "extensions": [
         "ms-python.pythony",
-      ]
+	],
+	"dockerComposeFile": [
+		"../docker-compose-cpu.yml",
+		"docker-compose.yml"
+	],
+	"service": "ml-dev",
+	"workspaceFolder": "/workspace"
 }

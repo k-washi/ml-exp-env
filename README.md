@@ -1,26 +1,10 @@
 # ml-exp-env
 機械学習実験環境
 
-# vs-codeでリモートコンテナに入る
-
-ExtensionのREMOTE-SSHを使用すればOK!!
-一旦、SSH先に入って、そこからコンテナにアクセスする。
-
-# tensorboard
+# Docker
 
 ```
-tensorboard --logdir <logpath> --port 18085 --host=0.0.0.0
+docker-compose -f docker-compose-cpu.yml up -d
 ```
 
-# バックグラウンド処理
-
-```
-nohup <cmd>
-```
-
-# 画像をgifにする
-
-```
-apt-get -y install imagemagick
-convert -delay 5 -loop 0 -resize 25% /*.png file_name.gif 
-```
+でコンテナを作成し、VS Codeの`ms-vscode-remote.remote-containers`から開発環境に入る
