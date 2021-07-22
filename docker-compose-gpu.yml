@@ -2,12 +2,13 @@ version: '2.3'
 
 services:
   ml-dev:
-    build: .docker
-    container_name: washizaki-dev
-    image: washizaki-dev
+    build:
+      context: .
+      dockerfile: .docker.Dockerfile.gpu
+    container_name: ml-dev
+    image: ml-dev-image
     volumes: 
       - $PWD:/workspace
-      - /data:/data
     command: 'jupyter-lab --allow-root --port 18082 --ip 0.0.0.0 --no-browser'
     ports:
       - 18081-18090:18081-18090

@@ -131,6 +131,4 @@ dmypy.json
 /ceres-solver
 
 /.vscode
-
-/Neural-Scene-Flow-Fields
-/JEG-Quest
+.DS_Store

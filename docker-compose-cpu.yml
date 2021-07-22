@@ -1,0 +1,15 @@
+version: '2.3'
+
+services:
+  ml-dev:
+    build: 
+      context: .
+      dockerfile: ./.docker/Dockerfile.cpu
+    container_name: ml-dev
+    image: ml-dev-image
+    tty: true
+    volumes: 
+      - $PWD:/workspace
+    command: 'jupyter-lab --allow-root --port 18082 --ip 0.0.0.0 --no-browser'
+    ports:
+      - 18081-18090:18081-18090
