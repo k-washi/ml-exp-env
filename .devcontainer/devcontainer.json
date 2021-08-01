@@ -1,6 +1,7 @@
 {
     "extensions": [
         "ms-python.pythony",
+		"donjayamanne.python-extension-pack",
 	],
 	"dockerComposeFile": [
 		"../docker-compose-cpu.yml",
