@@ -4,7 +4,7 @@ services:
   ml-dev:
     build:
       context: .
-      dockerfile: .docker.Dockerfile.gpu
+      dockerfile: ./.docker/Dockerfile.gpu
     container_name: ml-dev
     image: ml-dev-image
     volumes: 
