@@ -108,3 +108,36 @@ pyenv local 3.8.0
 ```
 ./.devcontainer/vscode_extentions_install_batch.sh
 ```
+
+# データのバージョンコーントロール
+
+```
+dvc init
+dvc remote add -d storage s3://ml-ops-sample-bucket/dvcstore
+
+dvc pull
+```
+
+## データを変更した場合
+
+```
+dvc add data
+dvc push
+```
+
+もしからしたら、
+```
+pip install dvc[s3]
+```
+が必要かも。
+
+## .dvcをgitに保存する
+
+```
+git add .dvc
+git commit -m "add data"
+git push origin repo
+git checkout <>
+dvc checkout
+```
+

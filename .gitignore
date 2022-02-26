@@ -134,3 +134,5 @@ dmypy.json
 /.vscode
 .DS_Store
 cdk.out/
+/data
+.data/
