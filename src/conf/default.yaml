@@ -1,0 +1,11 @@
+name: ml-ops-sample
+aws_s3_dataset_bucket: ml-ops-sample-bucket
+
+
+defaults:
+  - cdk: default
+  - ml: default
+
+hydra:
+  run:
+    dir: .
