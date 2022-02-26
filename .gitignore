@@ -136,3 +136,4 @@ dmypy.json
 cdk.out/
 /data
 .data/
+data.dvc
