@@ -137,3 +137,4 @@ cdk.out/
 /data
 .data/
 data.dvc
+.neptune/

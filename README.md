@@ -45,6 +45,8 @@ AWSLambda_FullAccess
 cdk init setup --language=python
 ```
 
+また、`cdk destroy`などで、データの削除を行う予定がない場合、`src/cdk/setup/setup/setup_stack.py`のremoval_policyを削除すると良い。
+
 # test
 
 ```
@@ -141,3 +143,6 @@ git checkout <>
 dvc checkout
 ```
 
+# 実験のトラッキング
+
+neptuneでトラッキングする例 `src/sample/neptune_train.py`
