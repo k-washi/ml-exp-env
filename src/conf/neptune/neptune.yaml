@@ -1,0 +1,6 @@
+defaults:
+  - base_neptune
+  
+project_name: test-project-v1
+mode: async
+exe_id: -1

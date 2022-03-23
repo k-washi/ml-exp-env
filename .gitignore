@@ -138,3 +138,4 @@ cdk.out/
 .data/
 data.dvc
 .neptune/
+.hydra

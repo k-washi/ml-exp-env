@@ -5,12 +5,19 @@
 
 .envに記載する
 
-```
+```s
 # naptune.ai実験管理用
 NEPTUNE_AI_API_TOKEN=xxx
 ```
 
+環境変数取得関数の修正が必要。
+```s
+src/util/load_env.py
+```
+
 # AWS周りの環境設定
+
+もし、Data Version Controlなどを使用する場合に必要となる。
 
 - awsのクレデンシャル設定
 
@@ -47,10 +54,43 @@ cdk init setup --language=python
 
 また、`cdk destroy`などで、データの削除を行う予定がない場合、`src/cdk/setup/setup/setup_stack.py`のremoval_policyを削除すると良い。
 
+# 実行環境作成(エディターモード)
+
+`src.util.~`などモジュールのimportを行うために必要です。
+
+```
+pip install -e .
+```
+
 # test
+
+テストの実行方法です。`pytest`か`tox`の使用方法を記載しています。
 
 ```
 python -m pytest
+```
+
+toxで使用されるモジュールは、まず環境の作成を行います。
+
+```
+python -m tox
+```
+
+
+もし、toxの環境を作り直す
+
+```
+python -m tox -r
+```
+
+テストの実行方法です。
+```
+python -m tox -e py39
+```
+
+リンターによるチェックです。
+```
+python -m tox -e lint
 ```
 
 # Docker

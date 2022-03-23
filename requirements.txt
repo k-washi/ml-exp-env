@@ -1,8 +1,15 @@
 albumentations>=1.1.0
 aws-cdk-lib>=2.14.0
 boto3>=1.21.8
+
 hydra-core>=1.1.1
 pytest>=7.0.1
+tox>=3.24.5
+black>=22.1.0
+isort>=5.10.1
+mypy>=0.941
+flake8>=4.0.1
+
 ray>=1.10.0
 
 scikit-image>=0.19.2
@@ -46,3 +53,4 @@ pyopenjtalk>=0.1.0
 
 neptune-client==0.14.3
 dvc==2.9.5
+
