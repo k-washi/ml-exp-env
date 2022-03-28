@@ -27,7 +27,7 @@ _neptune.register_configs()
 cfg_path = Path(__file__, "..", "..", "..").resolve().joinpath("src/conf")
 
 
-@hydra.main(config_path=cfg_path, config_name="default")
+@hydra.main(config_path=str(cfg_path), config_name="default")
 def my_app(cfg: Config) -> None:
     print(OmegaConf.to_yaml(cfg))
 
