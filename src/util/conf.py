@@ -1,5 +1,6 @@
 from hydra import compose, initialize_config_dir
 from omegaconf import OmegaConf
+
 from src.params.conf import Config
 
 
@@ -12,7 +13,7 @@ def get_hydra_cnf(config_dir: str, config_name: str) -> Config:
     """
     with initialize_config_dir(config_dir=config_dir):
         cfg_dict = compose(config_name=config_name)
-        dict_to_config = Config(cfg_dict) # type: ignore
+        dict_to_config = Config(cfg_dict)  # type: ignore
         cfg: Config = OmegaConf.structured(dict_to_config)
         return cfg
 

@@ -1,13 +1,12 @@
 import os
-from dataclasses import dataclass
 
 from dotenv import load_dotenv
+from pydantic import BaseModel
 
 load_dotenv(verbose=True)
 
 
-@dataclass
-class Env:
+class Env(BaseModel):
     neptune_api_token: str
     aws_access_key_id: str
     aws_region: str

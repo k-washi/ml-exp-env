@@ -5,9 +5,9 @@ import hydra
 from hydra.core.config_store import ConfigStore
 from omegaconf import OmegaConf
 
-from src.params.hydra import cdk as _cdk
-from src.params.hydra import ml as _ml
-from src.params.hydra import neptune as _neptune
+from src.params.subs import cdk as _cdk
+from src.params.subs import ml as _ml
+from src.params.subs import neptune as _neptune
 
 
 @dataclass
