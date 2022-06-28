@@ -7,6 +7,10 @@ services:
       dockerfile: ./.docker/Dockerfile.gpu
     container_name: ml-dev
     image: ml-dev-image
+    shm_size: '16gb'
+    tty: true
+    env_file:
+      - .env
     volumes: 
       - $PWD:/workspace
     command: 'jupyter-lab --allow-root --port 18082 --ip 0.0.0.0 --no-browser'

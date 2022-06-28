@@ -1,25 +1,40 @@
-FROM nvidia/cuda:11.1.1-devel-ubuntu20.04
+FROM ubuntu:20.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update -y && apt-get install -y build-essential vim \
-    wget curl git zip gcc make openssl \
+    wget curl git zip gcc cmake make cmake openssl \
     libssl-dev libbz2-dev libreadline-dev \
     libsqlite3-dev python3-tk tk-dev python-tk \
     libfreetype6-dev libffi-dev liblzma-dev libsndfile1 ffmpeg -y
+
+RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | bash
+RUN apt-get install -y nodejs
+RUN node -v
+RUN npm -v
+
+RUN npm install -g aws-cdk
+
+RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+RUN unzip awscliv2.zip
+RUN ./aws/install
+
 RUN git clone https://github.com/yyuu/pyenv.git /root/.pyenv
 ENV HOME  /root
 ENV PYENV_ROOT $HOME/.pyenv
 ENV PATH $PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH
 RUN pyenv --version
-RUN pyenv install 3.8.10
-RUN pyenv global 3.8.10
+
+RUN pyenv install 3.9.7
+RUN pyenv global 3.9.7
+
 RUN python --version
 RUN pyenv rehash
 RUN pip install --upgrade pip
-COPY .docker/requirements.txt .
-RUN pip install torch==1.8.0 torchvision==0.9.0 torchaudio==0.8.0 
+
+COPY requirements.txt .
 RUN pip install -r requirements.txt
 
+RUN pip3 install torch==1.10.2+cpu torchvision==0.11.3+cpu torchaudio==0.10.2+cpu -f https://download.pytorch.org/whl/cpu/torch_stable.html
 
 # JupyterNotebookのパスワード
 RUN mkdir $HOME/.jupyter

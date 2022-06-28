@@ -1,0 +1,9 @@
+defaults:
+  - _self_
+  - cdk: cdk
+  - ml: ml
+  - neptune: neptune
+
+hydra:
+  run:
+    dir: .

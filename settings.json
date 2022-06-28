@@ -1,0 +1,18 @@
+{
+    "python.formatting.provider": "black",
+    "python.languageServer": "Pylance",
+    "python.linting.flake8Args": ["--max-line-length 119"],
+    "python.linting.flake8Enabled": true,
+    "python.linting.mypyEnabled": true,
+    "editor.rulers": [88, 119],
+    "pylance.insidersChannel": "daily",
+    "python.analysis.completeFunctionParens": true,
+    "python.analysis.logLevel": "Warning",
+    "python.analysis.memory.keepLibraryAst": true,
+    "python.autoComplete.addBrackets": true,
+    "python.diagnostics.sourceMapsEnabled": true,
+    "python.insidersChannel": "daily",
+    "python.linting.banditEnabled": true,
+    "python.terminal.activateEnvInCurrentTerminal": true,
+    "python.testing.pytestEnabled": true
+}

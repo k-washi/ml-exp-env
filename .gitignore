@@ -130,5 +130,12 @@ dmypy.json
 /data/*
 /ceres-solver
 
+.aws/*
 /.vscode
 .DS_Store
+cdk.out/
+/data
+.data/
+data.dvc
+.neptune/
+.hydra
