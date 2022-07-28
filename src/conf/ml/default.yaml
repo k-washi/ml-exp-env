@@ -1,5 +1,3 @@
-defaults:
-  - base_ml
 seed: 3407
 
 batch_size: 32

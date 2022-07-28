@@ -1,13 +1,11 @@
 from aws_cdk import RemovalPolicy, Stack
 from aws_cdk import aws_s3 as _s3
 from constructs import Construct
-
-from src.params.hydra.cdk import CdkDefaultConfig
-
+from omegaconf import OmegaConf
 
 class SetupStack(Stack):
     def __init__(
-        self, scope: Construct, construct_id: str, cfg: CdkDefaultConfig, **kwargs
+        self, scope: Construct, construct_id: str, cfg: OmegaConf, **kwargs
     ) -> None:
         super().__init__(scope, construct_id, **kwargs)
 
