@@ -24,21 +24,21 @@ ENV PYENV_ROOT $HOME/.pyenv
 ENV PATH $PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH
 RUN pyenv --version
 
-RUN pyenv install 3.9.7
-RUN pyenv global 3.9.7
+RUN pyenv install 3.10.7
+RUN pyenv global 3.10.7
 
 RUN python --version
 RUN pyenv rehash
 RUN pip install --upgrade pip
 
-COPY requirements.txt .
-RUN pip install -r requirements.txt
+# poetry
+RUN curl -sSL https://install.python-poetry.org | POETRY_HOME=/opt/poetry python3 -
+ENV PATH="/opt/poetry/bin:$PATH"
 
-RUN pip3 install torch==1.10.2+cpu torchvision==0.11.3+cpu torchaudio==0.10.2+cpu -f https://download.pytorch.org/whl/cpu/torch_stable.html
+RUN poetry config virtualenvs.in-project true
 
-# JupyterNotebookのパスワード
-RUN mkdir $HOME/.jupyter
-COPY .docker/jupyter_notebook_config.py $HOME/.jupyter/
-ENV PASSWORD password
+COPY pyproject.toml .
+
+RUN poetry install
 
 WORKDIR /workspace

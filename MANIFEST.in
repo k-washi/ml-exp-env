@@ -1,8 +1,0 @@
-include README.md
-include requirements_test.txt
-include setup.py
-include tox.ini
-graft tests
-
-global-exclude __pycache__
-global-exclude *.py[cod]
