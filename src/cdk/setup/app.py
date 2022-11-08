@@ -10,7 +10,7 @@ from src.util.load_env import load_env
 
 module_path = pathlib.Path(__file__, "..", "..", "..", "..").resolve()
 env = load_env(os.path.join(module_path, ".env"))
-cfg = get_hydra_cnf(os.path.join(module_path, "src/conf"), "default")
+cfg = get_hydra_cnf(os.path.join(module_path, "src/conf"), "config")
 
 cdk.Environment()
 
