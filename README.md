@@ -9,4 +9,5 @@ docker-compose -f docker-compose-gpu.yml up -d
 ```
 python -m venv .venv
 source .venv/bin/activate
+pip install -e .
 ```
