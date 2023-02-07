@@ -9,8 +9,6 @@ services:
     image: ml-dev-image
     shm_size: '24gb'
     tty: true
-    env_file:
-      - .env
     volumes: 
       - $PWD:/workspace
     command: '/bin/bash'
