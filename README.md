@@ -1,7 +1,7 @@
 # 環境構築
 
 ```
-docker-compose -f docker-compose-gpu.yml up -d
+PWD=${PWD} docker-compose up -d
 ```
 
 ## Docker内
