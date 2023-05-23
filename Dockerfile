@@ -13,7 +13,7 @@ ENV PYENV_ROOT $HOME/.pyenv
 ENV PATH $PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH
 RUN pyenv --version
 
-RUN pyenv install 3.10.7
-RUN pyenv global 3.10.7
+RUN pyenv install 3.10.11
+RUN pyenv global 3.10.11
 
 WORKDIR /workspace
