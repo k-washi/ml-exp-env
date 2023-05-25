@@ -1,13 +1,17 @@
 # 環境構築
 
 ```
-PWD=${PWD} docker-compose up -d
+docker-compose up -d
 ```
 
 ## Docker内
 
 ```
-python -m venv .venv
-source .venv/bin/activate
-pip install -e .
+poetry install
+```
+
+## vscode extentions install
+
+```
+./.devcontainer/vscode_extentions_install_batch.sh 
 ```

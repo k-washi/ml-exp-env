@@ -140,3 +140,5 @@ data.dvc
 .neptune/
 .hydra
 poetry.lock
+checkpoints/
+results/

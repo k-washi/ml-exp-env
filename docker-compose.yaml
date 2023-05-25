@@ -12,6 +12,7 @@ services:
     command: '/bin/bash'
     ports:
       - 18081-18090:18081-18090
+    #runtime: nvidia
     deploy:
       resources:
         reservations:

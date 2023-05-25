@@ -14,6 +14,7 @@ pkglist=(
 		njpwerner.autodocstring
 		ms-python.vscode-pylance
 		gruntfuggly.todo-tree
+		bungcip.better-toml
 )
  
 for var in ${pkglist[@]}
