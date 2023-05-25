@@ -139,6 +139,5 @@ cdk.out/
 data.dvc
 .neptune/
 .hydra
-poetry.lock
 checkpoints/
 results/
