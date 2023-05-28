@@ -8,7 +8,10 @@ docker-compose up -d
 
 ```
 poetry install
+pip install -e .
 ```
+
+poetryでライブラリの依存関係を管理しpipで、自前のライブラリをeditable modeでimport可能にする。
 
 ## vscode extentions install
 
