@@ -1,22 +1,26 @@
 {
-    "extensions": [
-        "ms-python.python",
-		"donjayamanne.python-extension-pack",
-		"oderwat.indent-rainbow",
-		"pkief.material-icon-theme",
-		"mosapride.zenkaku",
-		"aaron-bond.better-comments",
-		"shardulm94.trailing-spaces",
-		"kevinrose.vsc-python-indent",
-		"tabnine.tabnine-vscode",
-		"njpwerner.autodocstring",
-		"ms-python.vscode-pylance",
-		"gruntfuggly.todo-tree"
-	],
+	"customizations": {
+		"vscode": {	
+			"extensions": [
+				"ms-python.python",
+				"donjayamanne.python-extension-pack",
+				"oderwat.indent-rainbow",
+				"pkief.material-icon-theme",
+				"mosapride.zenkaku",
+				"aaron-bond.better-comments",
+				"shardulm94.trailing-spaces",
+				"kevinrose.vsc-python-indent",
+				"tabnine.tabnine-vscode",
+				"njpwerner.autodocstring",
+				"ms-python.vscode-pylance",
+				"gruntfuggly.todo-tree"
+			]
+		}
+	},
 	"dockerComposeFile": [
-		"../docker-compose-cpu.yml",
-		"docker-compose.yml"
+		"../docker-compose.yaml",
 	],
-	"service": "ml-dev",
-	"workspaceFolder": "/workspace"
+	
+	"workspaceFolder": "/home/mluser/mlexpenv",
+	"remoteUser": "mluser"
 }

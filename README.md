@@ -1,10 +1,20 @@
 # 環境構築
 
 ```
+docker-compose build --no-cache \
+    --build-arg uid=$(id -u) \
+    --build-arg gid=$(id -g)
 docker-compose up -d
 ```
 
+reference: [Ascender](https://github.com/cvpaperchallenge/Ascender/tree/develop)
+
 ## Docker内
+
+コンテナ内のbash起動
+
+`docker compose exec ml-dev bash`
+
 
 ```
 poetry install

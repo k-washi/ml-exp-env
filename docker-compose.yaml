@@ -1,14 +1,20 @@
-version: '3'
+version: '3.8'
 
 services:
   ml-dev:
-    build: .
+    build:
+      context: .
+      args:
+      - uid=1001
+      - gid=1001
+      - username=mluser
+      - project_name=mlexpenv
     container_name: ml-dev
     image: ml-dev-image
     shm_size: '24gb'
     tty: true
     volumes: 
-      - $PWD:/workspace
+      - $PWD:/home/mluser/mlexpenv
     command: '/bin/bash'
     ports:
       - 18081-18090:18081-18090
