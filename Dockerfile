@@ -3,6 +3,16 @@ ENV DEBIAN_FRONTEND="noninteractive" \
     LC_ALL="C.UTF-8" \
     LANG="C.UTF-8"
 
+RUN apt-get update -y && apt-get install -y build-essential vim \
+    wget curl git zip gcc make cmake openssl \
+    libssl-dev libbz2-dev libreadline-dev \
+    libsqlite3-dev python3-tk tk-dev python-tk \
+    libfreetype6-dev libffi-dev liblzma-dev libsndfile1 ffmpeg zstd -y
+
+RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+RUN unzip awscliv2.zip
+RUN ./aws/install
+
 ARG project_name=mlexpenv
 ARG uid=1001
 ARG gid=1001
@@ -14,11 +24,6 @@ RUN echo "gid ${gid}"
 RUN echo "username ${username}"
 RUN groupadd -r -f -g ${gid} ${username} && useradd -o -r -l -u ${uid} -g ${gid} -ms /bin/bash ${username}
 
-RUN apt-get update -y && apt-get install -y build-essential vim \
-    wget curl git zip gcc make cmake openssl \
-    libssl-dev libbz2-dev libreadline-dev \
-    libsqlite3-dev python3-tk tk-dev python-tk \
-    libfreetype6-dev libffi-dev liblzma-dev libsndfile1 ffmpeg -y
 
 USER ${username}
 WORKDIR ${APPLICATION_DIRECTORY}

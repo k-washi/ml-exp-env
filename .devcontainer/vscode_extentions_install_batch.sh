@@ -10,11 +10,12 @@ pkglist=(
 		aaron-bond.better-comments
 		shardulm94.trailing-spaces
 		kevinrose.vsc-python-indent
-		tabnine.tabnine-vscode
 		njpwerner.autodocstring
 		ms-python.vscode-pylance
 		gruntfuggly.todo-tree
 		bungcip.better-toml
+		GitHub.copilot
+		GitHub.copilot-labs
 )
  
 for var in ${pkglist[@]}

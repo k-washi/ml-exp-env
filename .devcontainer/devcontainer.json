@@ -10,10 +10,11 @@
 				"aaron-bond.better-comments",
 				"shardulm94.trailing-spaces",
 				"kevinrose.vsc-python-indent",
-				"tabnine.tabnine-vscode",
 				"njpwerner.autodocstring",
 				"ms-python.vscode-pylance",
-				"gruntfuggly.todo-tree"
+				"gruntfuggly.todo-tree",
+				"GitHub.copilot",
+				"GitHub.copilot-labs"
 			]
 		}
 	},
