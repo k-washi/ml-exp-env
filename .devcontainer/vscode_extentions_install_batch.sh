@@ -15,7 +15,7 @@ pkglist=(
 		gruntfuggly.todo-tree
 		bungcip.better-toml
 		GitHub.copilot
-		GitHub.copilot-labs
+		GitHub.copilot-chat
 )
  
 for var in ${pkglist[@]}

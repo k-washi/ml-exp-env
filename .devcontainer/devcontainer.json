@@ -14,7 +14,7 @@
 				"ms-python.vscode-pylance",
 				"gruntfuggly.todo-tree",
 				"GitHub.copilot",
-				"GitHub.copilot-labs"
+				"GitHub.copilot-chat"
 			]
 		}
 	},

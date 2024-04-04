@@ -9,7 +9,7 @@ ENV DEBIAN_FRONTEND="noninteractive" \
     LANG="C.UTF-8"
 
 RUN apt-get update -y && apt-get install -y build-essential vim \
-    wget curl git zip gcc make cmake openssl \
+    sudo wget curl git zip gcc make cmake openssl \
     libssl-dev libbz2-dev libreadline-dev \
     libsqlite3-dev python3-tk tk-dev python-tk \
     libfreetype6-dev libffi-dev liblzma-dev libsndfile1 ffmpeg zstd -y
