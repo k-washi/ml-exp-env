@@ -19,7 +19,7 @@ pkglist=(
         Gruntfuggly.todo-tree
         usernamehw.errorlens
         yzhang.markdown-all-in-one
-        GitHub.copilot-labs
+        GitHub.copilot-chat
 )
 
 for var in ${pkglist[@]}
