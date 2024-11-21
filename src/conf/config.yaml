@@ -1,7 +1,0 @@
-defaults:
-  - _self_
-  - ml: default
-
-hydra:
-  run:
-    dir: .

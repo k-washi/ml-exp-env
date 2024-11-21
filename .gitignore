@@ -131,7 +131,6 @@ dmypy.json
 /ceres-solver
 
 .aws/*
-/.vscode
 .DS_Store
 cdk.out/
 /data
@@ -141,3 +140,8 @@ data.dvc
 .hydra
 checkpoints/
 results/
+logs/
+dist/
+.ruff_cache/
+tmp/
+nohup/

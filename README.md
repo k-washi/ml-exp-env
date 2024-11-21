@@ -1,31 +1,77 @@
-# 環境構築
+# 実行環境の構築
 
-```
-docker-compose build --no-cache \
+## Docker環境の準備
+
+Dockerfileをビルド
+
+```bash
+docker compose build \
     --build-arg uid=$(id -u) \
     --build-arg gid=$(id -g)
-docker-compose up -d
 ```
 
-reference: [Ascender](https://github.com/cvpaperchallenge/Ascender/tree/develop)
+コンテナを起動
 
-## Docker内
-
-コンテナ内のbash起動
-
-`docker compose exec ml-dev bash`
-
-
+```bash
+docker compose up -d
 ```
-poetry install
+
+## 環境の構築
+
+準備した環境に、pythonの実行環境を構築する
+
+
+実行に必要なライブラリのインストール
+
+```bash
+uv sync --no-dev
+```
+
+※開発環境も含めてインストールする場合は、`uv sync`を実行
+
+
+### pytorchについて
+[Using uv with PyTorch](https://docs.astral.sh/uv/guides/integration/pytorch/#using-a-pytorch-index)
+
+### pathの設定
+
+pythonのライブラリ読み込みに必要なパスを`PYTHONPATH`に設定
+
+一時的な環境なら以下のコマンドを実行
+
+```bash
+export PYTHONPATH="$PWD:$PYTHONPATH"
+```
+
+シェル立ち上げごとに設定したい場合は以下のコマンドを実行
+
+```bash
+echo "export PYTHONPATH="$PWD:$PYTHONPATH"" >>  ~/.bashrc
+
+source ~/.bashrc
+```
+
+# pythonを実行する場合
+
+pythonを実行する仮想環境をアクティベート
+
+```bash
 source .venv/bin/activate
-pip install -e .
 ```
 
-poetryでライブラリの依存関係を管理しpipで、自前のライブラリをeditable modeでimport可能にする。
+もし、commitをする場合も、アクティベートする必要がある。
 
-## vscode extentions install
+
+# 開発コマンド
+
+依存関係の確認
 
 ```
-./.devcontainer/vscode_extentions_install_batch.sh 
+uv tree
+```
+
+インストール済みのパッケージの確認
+
+```
+uv pip freeze
 ```

@@ -1,0 +1,128 @@
+# Exclude a variety of commonly ignored directories.
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".ipynb_checkpoints",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pyenv",
+    ".pytest_cache",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    ".vscode",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "site-packages",
+    "venv",
+]
+
+# Same as Black.
+line-length = 130
+indent-width = 4
+
+# Assume Python 3.12
+target-version = "py311"
+
+[lint]
+# Enable Pyflakes (`F`) and a subset of the pycodestyle (`E`)  codes by default.
+select = ["ALL"]
+ignore = [
+    "ANN101",  # ANN101 Missing type annotation for `self` in method"
+    "ANN401",  # ANN401 any type is not allowed
+    "BLE001",  # BLE001 -  Do not catch blind exception: `Exception`
+    "B904",    # B904 - Within an `except` clause, raise exceptions with `raise
+    "COM812",
+    "COM819",
+    "C414",    # C414 - Unnecessary `list` call within `sorted()`
+    "C901",    # C901 - Function is too complex
+    "D100",
+    "D203",
+    "D213",
+    "D300",
+    "E111",
+    "E114",
+    "E117",
+    "E402",    # E402 - module level import not at top of file
+    "FIX002",  # Line contains TODO, consider resolving the issue"
+    "G004",    # G004 - logging-f-string
+    "ISC001",
+    "ISC002",
+    "PLR0913", # too-many-arguments
+    "PLR0912", # too-many-branches
+    "PLW2901", # loop variable overwritten by assignment target
+    "PLR0915", # too-many-statements
+    "S101",    # use of assert detected
+    "S301",    # S301 - pickle module is used
+    "S603",    # S603 - subprocess call: check for execution of untrusted input
+    "T201",    # print found
+    "TD003",   # TD003 Missing issue link on the line following this TODO
+    "Q000",
+    "Q001",
+    "Q002",
+    "Q003",
+    "RUF001",  # RUF001 - Ambiguous character used
+    "RUF002",  # RUF001 - Ambiguous character used
+    "RUF003",  # RUF001 - Ambiguous character used
+    "RET504",  # RET504 - unnecessary-assign before return statement
+    "UP022",   # Prefer capture_output over sending stdout and stderr to PIPE
+    "W191",
+]
+
+
+# Allow fix for all enabled rules (when `--fix`) is provided.
+fixable = ["ALL"]
+unfixable = []
+
+# Allow unused variables when underscore-prefixed.
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+[format]
+# Like Black, use double quotes for strings.
+quote-style = "double"
+
+# Like Black, indent with spaces, rather than tabs.
+indent-style = "space"
+
+# Like Black, respect magic trailing commas.
+skip-magic-trailing-comma = false
+
+# Like Black, automatically detect the appropriate line ending.
+line-ending = "auto"
+
+[lint.per-file-ignores]
+"tests/**/*.py" = [
+    "B018",   # B018 - Found useless expression - necessary for testing exceptions are raised.
+    "COM812",
+    "COM819",
+    "D100",
+    "D102",
+    "D104",
+    "D203",
+    "D213",
+    "D300",
+    "E111",
+    "E114",
+    "E117",
+    "ISC001",
+    "ISC002",
+    "S101",   # use of assert detected
+    "T201",   # print found
+    "Q000",
+    "Q001",
+    "Q002",
+    "Q003",
+    "W191",
+    "ARG",    # ARG - Unused args are common in tests with mock patches and mock functions.
+]
