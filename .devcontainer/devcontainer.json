@@ -1,0 +1,27 @@
+{
+	"customizations": {
+		"vscode": {	
+			"extensions": [
+				"ms-python.python",
+				"donjayamanne.python-extension-pack",
+				"oderwat.indent-rainbow",
+				"pkief.material-icon-theme",
+				"mosapride.zenkaku",
+				"aaron-bond.better-comments",
+				"shardulm94.trailing-spaces",
+				"kevinrose.vsc-python-indent",
+				"njpwerner.autodocstring",
+				"ms-python.vscode-pylance",
+				"gruntfuggly.todo-tree",
+				"GitHub.copilot",
+				"GitHub.copilot-chat"
+			]
+		}
+	},
+	"dockerComposeFile": [
+		"../docker-compose.yaml",
+	],
+	
+	"workspaceFolder": "/home/mluser/mlexpenv",
+	"remoteUser": "mluser"
+}
