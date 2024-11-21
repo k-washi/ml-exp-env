@@ -75,3 +75,11 @@ uv tree
 ```
 uv pip freeze
 ```
+
+# pre-commit
+
+インストール
+
+```bash
+uv run pre-commit install
+```
