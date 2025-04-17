@@ -1,5 +1,3 @@
-version: '3'
-
 services:
   ml-dev:
     build:
@@ -13,11 +11,10 @@ services:
     image: ml-dev-image
     shm_size: '24gb'
     tty: true
-    volumes: 
+    volumes:
       - $PWD:/home/mluser/mlexpenv
     command: '/bin/bash'
-    ports:
-      - 18081-18090:18081-18090
+    network_mode: host
     #runtime: nvidia
     deploy:
       resources:

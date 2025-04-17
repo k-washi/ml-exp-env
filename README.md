@@ -24,6 +24,8 @@ docker compose up -d
 実行に必要なライブラリのインストール
 
 ```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
 uv sync --no-dev
 ```
 
@@ -32,6 +34,17 @@ uv sync --no-dev
 
 ### pytorchについて
 [Using uv with PyTorch](https://docs.astral.sh/uv/guides/integration/pytorch/#using-a-pytorch-index)
+
+以下のエラーが発生する場合
+
+```bash
+ImportError: libcusparseLt.so.0: cannot open shared object file: No such file or directory
+```
+
+```bash
+bash ./setup/install.sh
+rm cusparselt-local-repo*
+```
 
 ### pathの設定
 

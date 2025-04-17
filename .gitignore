@@ -145,3 +145,5 @@ dist/
 .ruff_cache/
 tmp/
 nohup/
+setup/cusparselt*
+cusparselt*

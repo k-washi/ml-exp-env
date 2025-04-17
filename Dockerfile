@@ -1,5 +1,5 @@
-FROM nvidia/cuda:12.4.1-runtime-ubuntu22.04
-#FROM nvidia/cuda:11.8.0-cudnn8-devel-ubuntu22.04
+FROM nvidia/cuda:12.8.0-cudnn-devel-ubuntu24.04
+RUN userdel -r ubuntu || true
 
 # Set timezone
 RUN ln --symbolic --force /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
@@ -11,9 +11,9 @@ ENV DEBIAN_FRONTEND="noninteractive" \
 
 RUN apt-get update -y && apt-get install -y --no-install-recommends \
     build-essential vim \
-    sudo wget curl git zip unzip gcc make cmake openssl openssh-client \
+    sudo wget curl git zip unzip gcc make cmake clang openssl openssh-client \
     libssl-dev libbz2-dev libreadline-dev \
-    libsqlite3-dev python3-tk tk-dev python-tk \
+    libsqlite3-dev python3-tk tk-dev \
     libfreetype6-dev libffi-dev liblzma-dev libsndfile1 ffmpeg zstd
 
 RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
@@ -38,8 +38,9 @@ RUN addgroup --gid ${gid} ${username} && \
 USER ${username}
 WORKDIR ${APPLICATION_DIRECTORY}
 
-RUN curl -LsSf https://astral.sh/uv/install.sh | sh && \
-    echo '. $HOME/.cargo/env' >> $HOME/.bashrc
+# Download the latest installer
+RUN curl -LsSf https://astral.sh/uv/install.sh | sh
+ENV PATH="/home/${username}/.local/bin:$PATH"
 
 
 

@@ -6,8 +6,12 @@ description = "ml-env"
 authors = [{ name = "k-washi", email = "bandad.kw@gmail.com" }]
 
 readme = "README.md"
-requires-python = ">=3.11"
-dependencies = ["hydra-core>=1.3.2", "numpy==1.26.4", "torch>=2.5.1"]
+requires-python = "==3.12.*"
+dependencies = [
+    "numpy==1.26.4",
+    "torch>=2.6.0",
+    "torchaudio>=2.6.0"
+]
 
 
 [tool.uv]
@@ -19,9 +23,9 @@ dev-dependencies = [
 ]
 
 [tool.uv.sources]
-torch = [{ index = "pytorch-cu121", marker = "platform_system != 'Darwin'" }]
+torch = [{ index = "pytorch-cu126", marker = "platform_system != 'Darwin'" }]
 
 [[tool.uv.index]]
-name = "pytorch-cu121"
-url = "https://download.pytorch.org/whl/cu121"
+name = "pytorch-cu126"
+url = "https://download.pytorch.org/whl/cu126"
 explicit = true

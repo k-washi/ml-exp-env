@@ -55,15 +55,21 @@ ignore = [
     "E114",
     "E117",
     "E402",    # E402 - module level import not at top of file
+    "FBT001",  # Boolean-typed positional argument in function definition
+    "FBT002",  # Boolean default positional argument in function definition
     "FIX002",  # Line contains TODO, consider resolving the issue"
     "G004",    # G004 - logging-f-string
     "ISC001",
     "ISC002",
+    "N802",    # N802 - function name should be lowercase
+    "N812",    # N812 - lowercase imported as non lowercase
+    "PLR0911", # too-many-return-statements
     "PLR0913", # too-many-arguments
     "PLR0912", # too-many-branches
     "PLW2901", # loop variable overwritten by assignment target
     "PLR0915", # too-many-statements
     "S101",    # use of assert detected
+    "S112",    # `try`-`except`-`continue` detected, consider logging the exception
     "S301",    # S301 - pickle module is used
     "S603",    # S603 - subprocess call: check for execution of untrusted input
     "T201",    # print found
